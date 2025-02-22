@@ -191,10 +191,10 @@
               <div class="figma--container">
                 <div class="figma">
                   <h3>JavaScript</h3>
-                  <p>19%</p>
+                  <p>29%</p>
                 </div>
                 <div class="progress--bar">
-                  <div class="progress--level" style="width: 19%"></div>
+                  <div class="progress--level" style="width: 30%"></div>
                 </div>
               </div>
 
@@ -204,7 +204,7 @@
                   <p>29%</p>
                 </div>
                 <div class="progress--bar">
-                  <div class="progress--level" style="width: 29%"></div>
+                  <div class="progress--level" style="width: 30%"></div>
                 </div>
               </div>
             </div>
@@ -436,6 +436,30 @@
       // Get all tab buttons and portfolio cards
       const tabBtns = document.querySelectorAll('.tab-btn');
       const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+      // Add smooth scrolling to nav links
+      document.querySelectorAll('.nav--links a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          
+          if (targetId === '#') return; // Skip if href is just "#"
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            // Close mobile menu if open
+            navToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Smooth scroll to target
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
 
       // Handle project preview images
       document.querySelectorAll('.project-preview').forEach(preview => {

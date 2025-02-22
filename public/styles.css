@@ -105,8 +105,15 @@ a, a:active, a:visited {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
-  position: relative;
+  padding: 25px 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(16, 16, 16, 0.95);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
 }
 
 .nav--logo {
@@ -122,6 +129,31 @@ a, a:active, a:visited {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.nav--links a {
+  position: relative;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav--links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav--links a:hover {
+  color: var(--accent);
+}
+
+.nav--links a:hover::after {
+  width: 100%;
 }
 
 .nav--toggle {
@@ -189,6 +221,14 @@ a, a:active, a:visited {
     z-index: 999;
   }
 
+  .nav--links a::after {
+    display: none;
+  }
+
+  .nav--links a:hover {
+    transform: translateX(10px);
+  }
+
   .nav--links.active {
     transform: translateX(0);
   }
@@ -213,7 +253,7 @@ a, a:active, a:visited {
 
 @media (max-width: 480px) {
   .nav--bar {
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .nav--logo {
@@ -225,6 +265,12 @@ a, a:active, a:visited {
   border: 2px solid var(--accent);
   border-radius: 6px;
   padding: 6px 12px;
+  transition: all 0.3s ease;
+}
+
+.resume:hover {
+  background-color: var(--accent);
+  color: var(--shadow) !important;
 }
 
 /* HERO SECTION */
@@ -234,7 +280,7 @@ a, a:active, a:visited {
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-  padding: 80px 20px;
+  padding: 120px 20px 80px;
   margin: 0 auto;
   position: relative;
   gap: 3rem;
@@ -1269,6 +1315,7 @@ a, a:active, a:visited {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 100px 20px 60px;
   }
 
   .full--name {
@@ -1311,7 +1358,7 @@ a, a:active, a:visited {
 
 @media (max-width: 480px) {
   .user--profile {
-    padding: 40px 15px;
+    padding: 90px 15px 40px;
     gap: 2rem;
   }
 
