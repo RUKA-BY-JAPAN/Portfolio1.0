@@ -98,7 +98,7 @@ a, a:active, a:visited {
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-  padding: 100px 20px;
+  padding: 60px 20px;
   margin: 0 auto;
   position: relative;
   gap: 3rem;
@@ -112,7 +112,7 @@ a, a:active, a:visited {
   gap: 3rem;
   position: absolute;
   left: 0px;
-  top: 230px;
+  top: 180px;
 }
 .social--icons ul {
   padding: 8px 16px;
@@ -549,26 +549,7 @@ a, a:active, a:visited {
 }
 .contact--me {
   display: block;
-  width: 31.25rem;<div class="social--icons">
-  <ul>
-    <li>
-      <a href=""><img src="./assets/behance.svg" alt="" /></a>
-    </li>
-    <li>
-      <a href=""><img src="./assets/figma.svg" alt="" /></a>
-    </li>
-    <li>
-      <a href=""></a><img src="./assets/github.svg" alt="" />
-    </li>
-    <li>
-      <a href=""></a><img src="./assets/linkedin.svg" alt="" />
-    </li>
-    <li>
-      <a href=""></a><img src="./assets/twitter.svg" alt="" />
-    </li>
-  </ul>
-  <div class="hero--label"><p>Follow me</p></div>
-</div>
+  width: 31.25rem;
 }
 .contact--me p {
   line-height: 2.25rem;
