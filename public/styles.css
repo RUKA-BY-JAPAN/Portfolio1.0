@@ -705,14 +705,15 @@ a, a:active, a:visited {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  gap: 2rem;
 }
 
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 .portfolio-card {
