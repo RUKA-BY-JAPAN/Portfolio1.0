@@ -487,9 +487,9 @@
               </div>
             </div>
               
-            <a class="cta--outline" href="http://github.com/joeokat" target="_blank">Show more</a>
+            
         </div>
-
+        <a class="cta--outline" href="http://github.com/joeokat" target="_blank">Show more</a>
         <!--Contact-->
         <div id="contact" class="contact">
             <p class="container--label">Contact</p>
@@ -539,6 +539,27 @@
       // Get all tab buttons and portfolio cards
       const tabBtns = document.querySelectorAll('.tab-btn');
       const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+      // Handle project preview images
+      document.querySelectorAll('.project-preview').forEach(preview => {
+        const img = preview.querySelector('img');
+        if (img) {
+          img.addEventListener('error', () => {
+            preview.classList.add('no-image');
+            img.style.display = 'none';
+          });
+
+          // Check if image source is empty or invalid
+          if (!img.src || img.src === window.location.href || 
+              img.src === '#' || img.src === 'undefined' || 
+              !img.src.trim()) {
+            preview.classList.add('no-image');
+            img.style.display = 'none';
+          }
+        } else {
+          preview.classList.add('no-image');
+        }
+      });
 
       // Show all cards initially
       portfolioCards.forEach(card => {
