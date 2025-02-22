@@ -60,12 +60,44 @@ a, a:active, a:visited {
   background: var(--shadow);
 }
 
+@media (max-width: 768px) {
+  .container--label {
+    width: 100%;
+    max-width: 10rem;
+    margin: 0 auto;
+  }
+  
+  .my--skills > div:first-child,
+  .hobby--container > .container--label,
+  .portfolio-header > .container--label,
+  .contact > .container--label {
+    align-self: center;
+  }
+}
 
 /* CSS */
 .wrapper {
   max-width: 100%;
   padding: 0 100px;
   margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0 20px;
+  }
 }
 
 /* NAV SECTION */
@@ -400,6 +432,10 @@ a, a:active, a:visited {
   width: 100%;
 }
 
+.my--skills .container--label {
+  align-self: flex-end;
+}
+
 .skill--set {
   display: grid;
   grid-template-columns: 1fr;
@@ -471,6 +507,8 @@ a, a:active, a:visited {
 
 @media (max-width: 480px) {
   .my--skills {
+    margin: 30px 0;
+    gap: 1.5rem;
     padding: 0 0.5rem;
   }
 
@@ -560,7 +598,8 @@ a, a:active, a:visited {
 
 @media (max-width: 768px) {
   .hobby--container {
-    margin: 60px 0;
+    margin: 40px 0;
+    gap: 2rem;
   }
   
   .hobbies {
@@ -575,7 +614,8 @@ a, a:active, a:visited {
 
 @media (max-width: 480px) {
   .hobby--container {
-    margin: 40px 0;
+    margin: 30px 0;
+    gap: 1.5rem;
   }
   
   .hobbies {
@@ -784,13 +824,14 @@ a, a:active, a:visited {
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 0 0.5rem;
+    padding: 0 20px;
   }
 
   .portfolio-header {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .project-tabs {
@@ -836,11 +877,13 @@ a, a:active, a:visited {
 
 @media (max-width: 480px) {
   .portfolio {
+    margin: 30px 0;
     gap: 1.5rem;
   }
 
   .portfolio-grid {
     gap: 1rem;
+    margin: 0.75rem 0;
   }
 
   .project-tabs {
