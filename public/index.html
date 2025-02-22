@@ -541,27 +541,42 @@
       const portfolioCards = document.querySelectorAll('.portfolio-card');
 
       // Show all cards initially
-      portfolioCards.forEach(card => card.style.display = 'block');
+      portfolioCards.forEach(card => {
+        if (card.getAttribute('data-category') === 'web' || card.getAttribute('data-category') === 'all') {
+          card.classList.add('active');
+        }
+      });
 
       // Add click event listener to each tab button
       tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           // Remove active class from all buttons
           tabBtns.forEach(b => b.classList.remove('active'));
+          
           // Add active class to clicked button
           btn.classList.add('active');
-      // Get the tab category
-      const category = btn.getAttribute('data-tab');
-      // Show/hide portfolio cards based on category
-      portfolioCards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.classList.add('active');
-        } else {
-          card.classList.remove('active');
-        }
+          
+          // Get the tab category
+          const category = btn.getAttribute('data-tab');
+          
+          // Show/hide portfolio cards based on category with animation
+          portfolioCards.forEach(card => {
+            // Remove active class first
+            card.classList.remove('active');
+            
+            // Force a reflow to restart animation
+            void card.offsetWidth;
+            
+            // Add active class if category matches
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.classList.add('active');
+            }
+          });
+        });
       });
-    });
-  });
-</script>
+
+      // Trigger click on "All" tab to show all projects initially
+      document.querySelector('.tab-btn[data-tab="all"]').click();
+    </script>
   </body>
 </html>
