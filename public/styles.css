@@ -713,7 +713,7 @@ a, a:active, a:visited {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin: 2.5rem 0;
+  margin: 2rem 0;
 }
 
 .portfolio-card {
@@ -850,13 +850,14 @@ a, a:active, a:visited {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 20px;
+    margin: 1.5rem 0;
   }
 
   .portfolio-header {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 
   .project-tabs {
@@ -908,7 +909,7 @@ a, a:active, a:visited {
 
   .portfolio-grid {
     gap: 1rem;
-    margin: 0.75rem 0;
+    margin: 1rem 0;
   }
 
   .project-tabs {
