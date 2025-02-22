@@ -336,18 +336,20 @@
         </div>
         <!--Portfolio-->
         <div id="portfolio" class="portfolio">
-          <p class="container--label" style="align-self: flex-end;">Projects</p>
-          <!-- Project Tabs -->
-          <div class="project-tabs">
-            <button class="tab-btn active" data-tab="all">All</button>
-            <button class="tab-btn" data-tab="web">Web</button>
-            <button class="tab-btn" data-tab="app">App</button>
-            <button class="tab-btn" data-tab="ui">UI Designs</button>
-            <button class="tab-btn" data-tab="others">Others</button>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <!-- Project Tabs -->
+            <div class="project-tabs">
+              <button class="tab-btn active" data-tab="all">All</button>
+              <button class="tab-btn" data-tab="web">Web</button>
+              <button class="tab-btn" data-tab="app">App</button>
+              <button class="tab-btn" data-tab="ui">UI Designs</button>
+              <button class="tab-btn" data-tab="others">Others</button>
+            </div>
+            <p class="container--label">Projects</p>
           </div>
           <div class="portfolio-grid">
             <!-- DevTop Project -->
-            <div class="portfolio-card">
+            <div class="portfolio-card" data-category="web">
               <div class="project-preview">
                 <img src="./assets/projects/devtop.png" alt="DevTop Project Preview" />
               </div>
@@ -370,7 +372,7 @@
             </div>
 
             <!-- Biswasi Project -->
-            <div class="portfolio-card">
+            <div class="portfolio-card" data-category="app">
               <div class="project-preview">
                 <img src="./assets/projects/biswasi.png" alt="Biswasi Project Preview" />
               </div>
@@ -393,7 +395,7 @@
             </div>
 
             <!-- AlgoDS.js Project -->
-            <div class="portfolio-card">
+            <div class="portfolio-card" data-category="others">
               <div class="project-preview">
                 <img src="./assets/projects/algods.png" alt="AlgoDS.js Project Preview" />
               </div>
@@ -467,6 +469,9 @@
       // Get all tab buttons and portfolio cards
       const tabBtns = document.querySelectorAll('.tab-btn');
       const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+      // Show all cards initially
+      portfolioCards.forEach(card => card.style.display = 'block');
 
       // Add click event listener to each tab button
       tabBtns.forEach(btn => {
