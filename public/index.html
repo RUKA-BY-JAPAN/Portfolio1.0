@@ -76,12 +76,12 @@
             <p class="greetings">Hello! I am</p>
             <h1 class="full--name">Joshua Okata</h1>
             <div>
-              <h3 class="job--role">Front-end Engineer</h3>
+              <h3 class="job--role">UX Engineer</h3>
               <ul class="job--skills">
-                <li class="mr-4">UI/UX Designer</li>
+                <li class="mr-4">UI Designer</li>
                 <li class="mr-4">App Designer</li>
                 <li class="mr-4">Web Designer</li>
-                <li>Programmer</li>
+                <li>AI Programmer</li>
               </ul>
             </div>
             <div class="cta">
@@ -336,8 +336,86 @@
         </div>
         <!--Portfolio-->
         <div id="portfolio" class="portfolio">
-          <p class="container--label" style="align-self: flex-end;">Portfolio</p>
-          <h1 style="align-self: center;">Portfolio Under Construction</h1>
+          <p class="container--label" style="align-self: flex-end;">Projects</p>
+          <!-- Project Tabs -->
+          <div class="project-tabs">
+            <button class="tab-btn active" data-tab="all">All</button>
+            <button class="tab-btn" data-tab="web">Web</button>
+            <button class="tab-btn" data-tab="app">App</button>
+            <button class="tab-btn" data-tab="ui">UI Designs</button>
+            <button class="tab-btn" data-tab="others">Others</button>
+          </div>
+          <div class="portfolio-grid">
+            <!-- DevTop Project -->
+            <div class="portfolio-card">
+              <div class="project-preview">
+                <img src="./assets/projects/devtop.png" alt="DevTop Project Preview" />
+              </div>
+              <div class="project-info">
+                <h3>DevTop</h3>
+                <p>Cross-platform desktop tool for developers, does some useful job and makes life easy</p>
+                <div class="project-tech">
+                  <span>electron</span>
+                  <span>react</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername/devtop" target="_blank">
+                    <img src="./assets/github.svg" alt="GitHub" /> 
+                  </a>
+                  <a href="https://devtop-demo.com" target="_blank">
+                    <img src="./assets/external-link.svg" alt="External Link" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Biswasi Project -->
+            <div class="portfolio-card">
+              <div class="project-preview">
+                <img src="./assets/projects/biswasi.png" alt="Biswasi Project Preview" />
+              </div>
+              <div class="project-info">
+                <h3>Biswasi</h3>
+                <p>Cross-platform Mobile app for Muslim people to remind them about their prayer</p>
+                <div class="project-tech">
+                  <span>react native</span>
+                  <span>redux</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername/biswasi" target="_blank">
+                    <img src="./assets/github.svg" alt="GitHub" />
+                  </a>
+                  <a href="https://biswasi-app.com" target="_blank">
+                    <img src="./assets/external-link.svg" alt="External Link" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- AlgoDS.js Project -->
+            <div class="portfolio-card">
+              <div class="project-preview">
+                <img src="./assets/projects/algods.png" alt="AlgoDS.js Project Preview" />
+              </div>
+              <div class="project-info">
+                <h3>AlgoDS.js</h3>
+                <p>A Collection of most used algorithms and data structures implemented using JavaScript</p>
+                <div class="project-tech">
+                  <span>data structure</span>
+                  <span>algorithm</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername/algods-js" target="_blank">
+                    <img src="./assets/github.svg" alt="GitHub" />
+                  </a>
+                  <a href="https://algods-js-demo.com" target="_blank">
+                    <img src="./assets/external-link.svg" alt="External Link" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <a class="cta--outline" href="http://behance.net/joeokat" target="_blank">Show more</a>
         </div>
         <!--Contact-->
@@ -385,5 +463,30 @@
         </div>
       </footer>
     </div>
+    <script>
+      // Get all tab buttons and portfolio cards
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+      // Add click event listener to each tab button
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          tabBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+      // Get the tab category
+      const category = btn.getAttribute('data-tab');
+      // Show/hide portfolio cards based on category
+      portfolioCards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
   </body>
 </html>
