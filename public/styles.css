@@ -306,7 +306,6 @@ a, a:active, a:visited {
 .project-tabs {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
   align-self: flex-end;  /* Changed from flex-end to flex-start */
 }
 .tab-btn {
