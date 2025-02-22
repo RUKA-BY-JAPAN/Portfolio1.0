@@ -389,6 +389,30 @@ a, a:active, a:visited {
   border: 2px solid var(--accent);
 }
 
+@media (max-width: 768px) {
+  .cta {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cta--fill, .cta--outline {
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cta--fill, .cta--outline {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 /* ABOUT SECTION */
 .about {
   display: flex;
@@ -975,6 +999,88 @@ a, a:active, a:visited {
   margin-left: 0.5rem;
 }
 
+@media (max-width: 992px) {
+  .contact {
+    padding: 4rem 0;
+    gap: 2rem;
+  }
+
+  .contact--details {
+    padding: 0 1rem;
+  }
+
+  .contact--me p {
+    line-height: 2rem;
+  }
+
+  .contact--address h4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 0;
+  }
+
+  .contact--details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .contact--me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact--me a {
+    margin: 0 auto;
+  }
+
+  .contact--address {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact--address > div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 2rem 0;
+  }
+
+  .contact--details {
+    padding: 0 0.5rem;
+    gap: 2rem;
+  }
+
+  .contact--me p {
+    font-size: 0.95rem;
+    line-height: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact--address h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .contact--address p {
+    font-size: 0.9rem;
+  }
+
+  .contact--address span {
+    display: block;
+    margin: 0.3rem 0 0;
+  }
+}
+
 /* CSS */
 .footer {
   display: flex;
@@ -1158,7 +1264,21 @@ a, a:active, a:visited {
 @media (max-width: 768px) {
   .user--profile {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .full--name {
+    text-align: center;
+  }
+
+  .job--skills {
+    justify-content: center;
+  }
+
+  .job--skills li {
+    text-align: center;
   }
 
   .social--icons {
@@ -1208,11 +1328,13 @@ a, a:active, a:visited {
 
   .job--skills {
     flex-direction: column;
+    align-items: center;
     gap: 0.8rem;
   }
 
   .job--skills li {
     padding-left: 0;
+    text-align: center;
   }
 
   .job--skills li:not(:first-child)::before {
