@@ -111,8 +111,8 @@ a, a:active, a:visited {
   flex-direction: column;
   gap: 3rem;
   position: absolute;
-  left: 35px;
-  top: 245px;
+  left: 0px;
+  top: 230px;
 }
 .social--icons ul {
   padding: 8px 16px;
