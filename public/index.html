@@ -21,6 +21,9 @@
           <div class="nav--logo">
               <a href="/">JoeOkat</a>
           </div>
+          <button class="nav--toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+          </button>
           <ul class="nav--links">
             <li>
               <a href="#about">
@@ -493,6 +496,29 @@
 
       // Trigger click on "All" tab to show all projects initially
       document.querySelector('.tab-btn[data-tab="all"]').click();
+
+      // Mobile Navigation
+      const navToggle = document.querySelector('.nav--toggle');
+      const navLinks = document.querySelector('.nav--links');
+      
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.contains('active');
+        
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        
+        // Prevent scrolling when menu is open
+        document.body.style.overflow = isOpen ? '' : 'hidden';
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav--links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
     </script>
   </body>
 </html>
