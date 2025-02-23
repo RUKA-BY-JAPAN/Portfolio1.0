@@ -853,8 +853,8 @@ a, a:active, a:visited {
 }
 
 .project-links {
-  display: flex;
-  /* gap: 1rem; */
+  /* display: flex; */
+  gap: 1rem;
 }
 
 .project-links a {
