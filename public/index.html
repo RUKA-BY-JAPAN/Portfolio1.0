@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     <meta name="description" content="GET IN TOUCH: JoeOkat is a UX Engineer with a passion for building intuitive interfaces for web and mobile applications that solve real-world problems.">
-    <title>JoeOkat | Joshua Okata Ofosu</title>
+    <title>JoeOkat: Joshua Okata</title>
   </head>
 
   <body>
@@ -442,8 +442,8 @@
       const tabBtns = document.querySelectorAll('.tab-btn');
       const portfolioCards = document.querySelectorAll('.portfolio-card');
 
-      // Add smooth scrolling to nav links
-      document.querySelectorAll('.nav--links a[href^="#"]').forEach(anchor => {
+      // Add smooth scrolling to nav links and chevron button
+      document.querySelectorAll('.nav--links a[href^="#"], .cheveron[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
