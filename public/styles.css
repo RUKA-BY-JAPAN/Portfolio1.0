@@ -294,7 +294,7 @@ a, a:active, a:visited {
   gap: 3rem;
   position: absolute;
   left: 0px;
-  top: 180px;
+  top: 9rem;
   z-index: 10;
 }
 
@@ -344,14 +344,6 @@ a, a:active, a:visited {
   font-weight: 700;
   text-transform: uppercase;
 }
-
-.hero--label::after {
-  content: " ";
-  transform: rotate(-90deg);
-  width: 2px;
-  height: 50px;
-  background: var(--shadow);
-} 
 
 .hero {
   flex: 1;
@@ -862,7 +854,7 @@ a, a:active, a:visited {
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .project-links a {
