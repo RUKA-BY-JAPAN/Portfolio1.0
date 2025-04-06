@@ -660,7 +660,7 @@ a, a:active, a:visited {
 
 @media (max-width: 768px) {
   .hobby--container {
-    margin: 40px 0;
+    margin: 100px 0;
     gap: 2rem;
   }
   
@@ -676,7 +676,7 @@ a, a:active, a:visited {
 
 @media (max-width: 480px) {
   .hobby--container {
-    margin: 30px 0;
+    margin: 100px 0;
     gap: 1.5rem;
   }
   
@@ -1225,7 +1225,7 @@ a, a:active, a:visited {
 
 .hero--img {
   position: relative;
-  width: 380px;
+  width: 350px;
   height: 380px;
   flex-shrink: 0;
   margin-left: 2rem;
@@ -1307,7 +1307,7 @@ a, a:active, a:visited {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 60px 20px 60px;
   }
 
   .full--name {
@@ -1324,14 +1324,16 @@ a, a:active, a:visited {
 
   .social--icons {
     position: static;
-    margin-top: 2rem;
+    margin-top: 6rem;
+    gap: 1rem;
+    flex-direction: column-reverse;
   }
 
   .social--icons ul {
+    /* margin-top: 3.5rem; */
     flex-direction: row;
     justify-content: center;
-    gap: 2rem;
-    padding: 0;
+    gap: 1.5rem;
   }
 
   .social--icons ul li:hover {
@@ -1393,7 +1395,10 @@ a, a:active, a:visited {
   }
 
   .social--icons {
-    margin-top: 1.5rem;
+    display: flex;
+    flex-flow: column-reverse;
+    gap: 1rem;
+    margin-top: 5rem;
   }
 
   .social--icons ul {
